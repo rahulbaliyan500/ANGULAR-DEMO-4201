@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ANGULAR-DEMO-4201';
+
+  showMessage(msg: string): string {
+    return msg;
+  }
 }

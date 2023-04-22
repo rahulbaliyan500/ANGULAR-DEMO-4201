@@ -68,7 +68,7 @@
           },
           "options": {
             "port": 4201
-        },
+          },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
@@ -94,11 +94,23 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "0e883c89-02f7-4abe-b273-ee69b98f94b2"
+    "analytics": "0e883c89-02f7-4abe-b273-ee69b98f94b2",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
