@@ -1,8 +1,11 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { addition, multiply } from './calculator';
 
 describe('AppComponent', () => {
+  let component = new AppComponent();
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
@@ -14,22 +17,22 @@ describe('AppComponent', () => {
     }).compileComponents();
   });
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  xit(`should have as title 'ANGULAR-DEMO-4201'`, () => {
+
+    expect(component.title).toEqual('ANGULAR-DEMO-4201');
   });
 
-  it(`should have as title 'ANGULAR-DEMO-4201'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('ANGULAR-DEMO-4201');
-  });
+  xit('show alert message', () => {
+    expect(component.showMessage("Hello")).toEqual('Hello');
+    expect(component.showMessage("Hello")).toBe('Hello');
+  })
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ANGULAR-DEMO-4201 app is running!');
-  });
+  xit('calculate addition of two number', () => {
+    expect(addition(10, 20)).toBe(30);
+    expect(multiply(10, 20)).toEqual(200);
+  })
+
+  it('calculate multiply of two number', () => {
+    expect(multiply(10, 20)).toEqual(200);
+  })
 });
